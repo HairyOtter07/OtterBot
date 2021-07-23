@@ -1,0 +1,8 @@
+# dependencies
+node_modules/
+
+# environment variables files
+.env
+.env.*
+# exclude sample env
+!.env.sample
