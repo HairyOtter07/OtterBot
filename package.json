@@ -27,6 +27,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "@sapphire/decorators": "^2.2.0",
     "@sapphire/framework": "^2.0.0-next.118f8db6.0",
     "discord.js": "^13.0.0-dev.870a0de.1626998625",
     "dotenv": "^10.0.0"
