@@ -2,7 +2,10 @@
 node_modules/
 
 # environment variables files
-.env
-.env.*
+*.env
+*.env.*
 # exclude sample env
-!.env.sample
+!.sample.env
+
+# compiled code
+dist/
