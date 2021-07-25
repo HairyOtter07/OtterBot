@@ -7,7 +7,7 @@
     "prestart": "npm run build",
     "start": "node .",
     "build": "tsc",
-    "dev": "nodemon --ext js,ts,json --ignore dist/ --exec npm start"
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
