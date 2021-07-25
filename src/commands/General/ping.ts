@@ -5,7 +5,7 @@ import { Message } from "discord.js";
 @ApplyOptions<CommandOptions>({
     name: 'ping',
     description: "Pings the bot",
-    detailedDescription: "Shows the bot's latency, calculated as the time between your command and the bot's response."
+    detailedDescription: "Shows the bot's latency, calculated as the time between your command and the bot's response"
 })
 export default class extends Command {
     public async run(message: Message) {
