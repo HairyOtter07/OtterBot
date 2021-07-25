@@ -1,7 +1,7 @@
 import { ApplyOptions } from "@sapphire/decorators";
-import { EventOptions, Events, Listener } from "@sapphire/framework";
+import { ListenerOptions, Events, Listener } from "@sapphire/framework";
 
-@ApplyOptions<EventOptions>({
+@ApplyOptions<ListenerOptions>({
     event: Events.ClientReady,
 })
 export default class extends Listener {
