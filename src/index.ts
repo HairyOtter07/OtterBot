@@ -10,7 +10,7 @@ const client = new SapphireClient({
     defaultPrefix: "ob?",
     regexPrefix: /^(hey +)?otterbot[,! ]/i,
     logger: {
-        level: LogLevel.Info
+        level: LogLevel.Debug
     }
 });
 
