@@ -1,5 +1,5 @@
 import { LogLevel } from "@sapphire/framework";
-import { Intents } from "discord.js";
+import { Intents, Message } from "discord.js";
 
 import OtterClient from "./lib/structures/OtterClient";
 
@@ -16,6 +16,6 @@ const client = new OtterClient({
     }
 });
 
-client.fetchPrefix = () => process.env.PREFIX;
+client.fetchPrefix = (message: Message) => process.env.PREFIX;
 
 client.login(process.env.TOKEN);
