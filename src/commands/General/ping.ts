@@ -7,7 +7,8 @@ import { OtterCommand, OtterCommandOptions } from "../../lib/structures/OtterCom
     description: "Pings the bot",
     detailedDescription: "Shows the bot's latency, calculated as the time between your command and the bot's response",
     category: "General",
-    examples: ["ping"]
+    examples: ["ping"],
+    syntax: "ping"
 })
 export default class extends OtterCommand {
     public async run(message: Message) {
