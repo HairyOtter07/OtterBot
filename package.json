@@ -6,7 +6,9 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "node .",
+    "prebuild": "npm run clean",
     "build": "tsc",
+    "clean": "rm -rf dist",
     "dev": "nodemon"
   },
   "repository": {
