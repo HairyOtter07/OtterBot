@@ -16,6 +16,7 @@ import { isValidCategory } from "../../lib/util/functions";
 })
 export default class extends OtterCommand {
     public async run(message: Message, args: Args) {
+        const client = this.container.client;
         const commandOpt = args.getOptions('command', 'cmd');
         const categoryOpt = args.getOptions('category', 'cat');
 
@@ -38,7 +39,7 @@ export default class extends OtterCommand {
                 const commandObj = commandStore.find((value) => value.name == command && value.category == category);
                 if (commandObj) {
                     const cmdEmbed = new MessageEmbed({
-                        title: `${this.container.client.user?.username} Help`,
+                        title: `${client.user?.username} Help`,
                         description: `\`${commandObj.fullName}\``,
                         fields: [
                             {
@@ -47,11 +48,11 @@ export default class extends OtterCommand {
                             },
                             {
                                 name: "Syntax",
-                                value: `\`${this.container.client.fetchPrefix(message)}${commandObj.syntax}\``
+                                value: `\`${client.fetchPrefix(message)}${commandObj.syntax}\``
                             },
                             {
                                 name: "Examples",
-                                value: "```\n" + this.container.client.fetchPrefix(message) + commandObj.examples.join(`\n${this.container.client.fetchPrefix(message)}`) + "\n```"
+                                value: "```\n" + client.fetchPrefix(message) + commandObj.examples.join(`\n${client.fetchPrefix(message)}`) + "\n```"
                             }
                         ]
                     });
@@ -69,7 +70,7 @@ export default class extends OtterCommand {
             if (isValidCategory(category)) {
                 const commands = commandStore.filter((value) => value.category == category);
                 const catEmbed = new MessageEmbed({
-                    title: `${this.container.client.user?.username} Help`,
+                    title: `${client.user?.username} Help`,
                     description: `Commands in category \`${category}\``
                 });
                 commands.each(command => {
@@ -82,7 +83,7 @@ export default class extends OtterCommand {
         } else {
             const categories = categoryOptions as ReadonlyArray<string>;
             const helpEmbed = new MessageEmbed({
-                title: `${this.container.client.user?.username} Help`,
+                title: `${client.user?.username} Help`,
                 description: `Categories:\n\`${categories.join("`\n`")}\``,
                 fields: [
                     {
