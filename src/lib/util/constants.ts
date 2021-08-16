@@ -1,2 +1,2 @@
 export type CategoryOption = typeof categoryOptions[number];
-export const categoryOptions = ["General"] as const;
+export const categoryOptions = ["General", "Information"] as const;
