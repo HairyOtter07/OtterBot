@@ -36,7 +36,7 @@ export default class extends OtterCommand {
             const command = commandOpt[0];
             const category = categoryOpt[0];
             if (isValidCategory(category)) {
-                const commandObj = commandStore.find((value) => value.name == command && value.category == category);
+                const commandObj = commandStore.find((value) => (value.name == command || value.aliases.includes(command)) && value.category == category);
                 if (commandObj) {
                     const cmdEmbed = new MessageEmbed({
                         title: `${client.user?.username} Help`,
