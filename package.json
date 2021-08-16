@@ -9,7 +9,7 @@
     "prebuild": "npm run clean",
     "build": "tsc",
     "clean": "rm -rf dist",
-    "dev": "tsc --watch"
+    "dev": "npm run clean && tsc-watch --onSuccess \"node .\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
