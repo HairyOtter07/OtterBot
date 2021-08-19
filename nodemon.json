@@ -1,5 +1,0 @@
-{
-    "exec": "npm start",
-    "ext": "js,ts,json",
-    "ignore": ["dist/"]
-}
