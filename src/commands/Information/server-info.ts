@@ -32,6 +32,10 @@ export default class extends OtterCommand {
                     {
                         name: "Number of Channels",
                         value: `${guild.channels.cache.filter(channel => channel.type != "GUILD_CATEGORY" && channel.type != "GUILD_NEWS_THREAD" && channel.type != "GUILD_PRIVATE_THREAD" && channel.type != "GUILD_PUBLIC_THREAD").size} (${guild.channels.cache.filter(channel => channel.type == "GUILD_STAGE_VOICE" || channel.type == "GUILD_VOICE").size} voice channels, ${guild.channels.cache.filter(channel => channel.type == "GUILD_TEXT" || channel.type == "GUILD_NEWS").size} text channels)`
+                    },
+                    {
+                        name: "Number of Roles",
+                        value: `${guild.roles.cache.size} (highest: ${guild.roles.highest.toString()})`
                     }
                 ],
                 thumbnail: {
