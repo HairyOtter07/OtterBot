@@ -2,7 +2,6 @@ import { ApplyOptions } from "@sapphire/decorators";
 import { Args } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { OtterCommand, OtterCommandOptions } from "../../lib/structures/OtterCommand";
-import { CategoryOption, categoryOptions } from "../../lib/util/constants";
 
 @ApplyOptions<OtterCommandOptions>({
     name: "help",
@@ -79,7 +78,7 @@ export default class extends OtterCommand {
                 message.reply(`Category Not Found: \`${category}\``);
             }
         } else {
-            const categories = categoryOptions as ReadonlyArray<string>;
+            const categories = this.container.stores.get("commands").categories;
             const helpEmbed = new MessageEmbed({
                 title: `${client.user?.username} Help`,
                 description: `Categories:\n\`${categories.join("`\n`")}\``,
