@@ -28,12 +28,11 @@ export default class extends OtterCommand {
             return
         }
         
-        const commandStore = this.store;
         if (commandOpt && categoryOpt) {
             const command = commandOpt[0];
             const category = categoryOpt[0];
-            if (this.container.stores.get("commands").categories.includes(category)) {
-                const commandObj = commandStore.find((value) => (value.name == command || value.aliases.includes(command)) && value.category == category);
+            if (this.baseStore.categories.includes(category)) {
+                const commandObj = this.store.find((value) => (value.name == command || value.aliases.includes(command)) && value.category == category);
                 if (commandObj) {
                     const cmdEmbed = new MessageEmbed({
                         title: `${client.user?.username} Help`,
@@ -64,8 +63,8 @@ export default class extends OtterCommand {
             }
         } else if (categoryOpt) {
             const category = categoryOpt[0];
-            if (this.container.stores.get("commands").categories.includes(category)) {
-                const commands = commandStore.filter((value) => value.category == category);
+            if (this.baseStore.categories.includes(category)) {
+                const commands = this.baseStore.filter((value) => value.category == category);
                 const catEmbed = new MessageEmbed({
                     title: `${client.user?.username} Help`,
                     description: `Commands in category \`${category}\``
@@ -78,7 +77,7 @@ export default class extends OtterCommand {
                 message.reply(`Category Not Found: \`${category}\``);
             }
         } else {
-            const categories = this.container.stores.get("commands").categories;
+            const categories = this.baseStore.categories;
             const helpEmbed = new MessageEmbed({
                 title: `${client.user?.username} Help`,
                 description: `Categories:\n\`${categories.join("`\n`")}\``,

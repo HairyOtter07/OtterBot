@@ -1,7 +1,8 @@
-import { Command, CommandOptions, PieceContext, Store } from "@sapphire/framework";
+import { Command, CommandOptions, CommandStore, PieceContext, Store } from "@sapphire/framework";
 
 export abstract class OtterCommand extends Command {
     public store!: Store<OtterCommand>;
+    public baseStore: CommandStore;
 
     public examples: string[];
     public syntax: string;
@@ -15,6 +16,8 @@ export abstract class OtterCommand extends Command {
         this.syntax = syntax;
 
         this.fullName = this.fullCategory.join("/") + "/" + this.name;
+
+        this.baseStore = this.container.stores.get("commands");
     }
 }
 
