@@ -3,7 +3,6 @@ import { Args } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { OtterCommand, OtterCommandOptions } from "../../lib/structures/OtterCommand";
 import { CategoryOption, categoryOptions } from "../../lib/util/constants";
-import { isValidCategory } from "../../lib/util/functions";
 
 @ApplyOptions<OtterCommandOptions>({
     name: "help",
@@ -34,7 +33,7 @@ export default class extends OtterCommand {
         if (commandOpt && categoryOpt) {
             const command = commandOpt[0];
             const category = categoryOpt[0];
-            if (isValidCategory(category)) {
+            if (this.container.stores.get("commands").categories.includes(category)) {
                 const commandObj = commandStore.find((value) => (value.name == command || value.aliases.includes(command)) && value.category == category);
                 if (commandObj) {
                     const cmdEmbed = new MessageEmbed({
@@ -66,7 +65,7 @@ export default class extends OtterCommand {
             }
         } else if (categoryOpt) {
             const category = categoryOpt[0];
-            if (isValidCategory(category)) {
+            if (this.container.stores.get("commands").categories.includes(category)) {
                 const commands = commandStore.filter((value) => value.category == category);
                 const catEmbed = new MessageEmbed({
                     title: `${client.user?.username} Help`,
