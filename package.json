@@ -29,7 +29,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@types/luxon": "^2.0.5",
     "tsc-watch": "^4.5.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.5.5"
   },
   "dependencies": {
     "@sapphire/decorators": "^2.2.0",
