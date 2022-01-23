@@ -4,7 +4,6 @@ import { CategoryOption } from "../util/constants";
 export abstract class OtterCommand extends Command {
     public store!: Store<OtterCommand>;
 
-    public category: CategoryOption;
     public examples: string[];
     public syntax: string;
     public fullName: string;
@@ -12,8 +11,7 @@ export abstract class OtterCommand extends Command {
     public constructor(context: PieceContext, options: OtterCommandOptions) {
         super(context, options);
 
-        const { category, examples, syntax } = options;
-        this.category = category;
+        const { examples, syntax } = options;
         this.examples = examples;
         this.syntax = syntax;
 
@@ -22,7 +20,6 @@ export abstract class OtterCommand extends Command {
 }
 
 export interface OtterCommandOptions extends CommandOptions {
-    category: CategoryOption;
     examples: string[];
     syntax: string;
 }

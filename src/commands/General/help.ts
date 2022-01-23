@@ -10,7 +10,6 @@ import { isValidCategory } from "../../lib/util/functions";
     description: "Shows the various commands of this bot",
     detailedDescription: "Lists categories, or shows help on a specific category or command",
     options: ["command", "cmd", "category", "cat"],
-    category: "General",
     examples: ["help", "help --category=General", "help --cat=General --cmd=help", "help --cat=General --command=ping"],
     syntax: "help [--category|--cat] [--command|--cmd]"
 })

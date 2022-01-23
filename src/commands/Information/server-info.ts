@@ -9,7 +9,6 @@ import { formatTimestamp } from "../../lib/util/functions";
     detailedDescription: "Show the server name, along with information about the members and channels",
     generateDashLessAliases: true,
     preconditions: ["GuildOnly"],
-    category: "Information",
     examples: ["server-info"],
     syntax: "server-info"
 })
