@@ -15,7 +15,7 @@ export abstract class OtterCommand extends Command {
         this.examples = examples;
         this.syntax = syntax;
 
-        this.fullName = this.category + "/" + this.name;
+        this.fullName = this.fullCategory.join("/") + "/" + this.name;
     }
 }
 

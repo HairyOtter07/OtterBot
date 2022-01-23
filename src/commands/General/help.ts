@@ -88,7 +88,11 @@ export default class extends OtterCommand {
                     {
                         name: "Syntax Key",
                         value: "`<--name>`: required option or flag\n`[--name]`: optional option or flag\n`|` (pipe): 'or'"
-                    }
+                    }, 
+                    {
+                        name: "Getting Help",
+                        value: `Use \`${client.fetchPrefix(message)}help --cat=General --cmd=help\` to learn how to use this command`
+                    },
                 ]
             });
             message.reply({ embeds: [helpEmbed] });
