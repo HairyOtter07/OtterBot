@@ -14,7 +14,7 @@ import { formatTimestamp } from "../../lib/util/functions";
     syntax: "server-info"
 })
 export default class extends OtterCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         if (message.guild) {
             const guild = message.guild;
             const infoEmbed = new MessageEmbed({

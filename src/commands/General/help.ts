@@ -15,7 +15,7 @@ import { isValidCategory } from "../../lib/util/functions";
     syntax: "help [--category|--cat] [--command|--cmd]"
 })
 export default class extends OtterCommand {
-    public async run(message: Message, args: Args) {
+    public async messageRun(message: Message, args: Args) {
         const client = this.container.client;
         const commandOpt = args.getOptions('command', 'cmd');
         const categoryOpt = args.getOptions('category', 'cat');

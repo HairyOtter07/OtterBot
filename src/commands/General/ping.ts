@@ -11,7 +11,7 @@ import { OtterCommand, OtterCommandOptions } from "../../lib/structures/OtterCom
     syntax: "ping"
 })
 export default class extends OtterCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const msg = await message.reply({ content: "Pong!" });
         msg.edit({ content: `Pong! (${msg.createdTimestamp - message.createdTimestamp} ms)` });
     }
